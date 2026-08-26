@@ -7,7 +7,7 @@ import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 import { rehypeAccessibleHeadingLinks } from './src/utils/rehype-accessible-heading-links.mjs';
 
-const site = process.env.SITE_URL || 'https://username.github.io';
+const site = process.env.SITE_URL || 'https://lllzzz04.github.io/Kasugai.github.io/';
 const base = process.env.BASE_PATH || '/';
 
 export default defineConfig({
