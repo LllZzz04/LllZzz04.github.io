@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+import PostList from '../../components/PostList.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { slugifyTag, visiblePosts, withBase } from '../../utils/site';
+
+const posts = visiblePosts(await getCollection('blog'));
+const tagCounts = posts.reduce((counts, post) => {
+  for (const tag of post.data.tags) counts.set(tag, (counts.get(tag) || 0) + 1);
+  return counts;
+}, new Map<string, number>());
+const tags = [...tagCounts.entries()].sort((a, b) => a[0].localeCompare(b[0]));
+---
+
+<BaseLayout
+  title="博客 — RFIC、模拟集成电路与学习笔记"
+  description="关于 RFIC、模拟集成电路、电子技术、数学与绘画的技术文章和学习笔记。"
+>
+  <div class="page shell">
+    <header class="page-header">
+      <p class="eyebrow">笔记与文章</p>
+      <h1>博客</h1>
+      <p>技术文章、学习笔记与仍在形成中的理解。内容按时间排序，草稿只会在本地开发环境显示。</p>
+    </header>
+
+    {tags.length > 0 && (
+      <nav class="tag-index" aria-label="按标签浏览">
+        <span>按标签浏览</span>
+        {tags.map(([tag, count]) => (
+          <a href={withBase(`/blog/tags/${slugifyTag(tag)}/`)}>{tag} <small>{count}</small></a>
+        ))}
+      </nav>
+    )}
+
+    <PostList posts={posts} />
+  </div>
+</BaseLayout>

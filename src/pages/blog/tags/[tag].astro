@@ -1,0 +1,34 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import PostList from '../../../components/PostList.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { slugifyTag, visiblePosts, withBase } from '../../../utils/site';
+
+interface Props {
+  tag: string;
+  posts: CollectionEntry<'blog'>[];
+}
+
+export async function getStaticPaths() {
+  const posts = visiblePosts(await getCollection('blog'));
+  const tags = [...new Set(posts.flatMap((post) => post.data.tags))];
+  return tags.map((tag) => ({
+    params: { tag: slugifyTag(tag) },
+    props: { tag, posts: posts.filter((post) => post.data.tags.includes(tag)) },
+  }));
+}
+
+const { tag, posts } = Astro.props;
+---
+
+<BaseLayout title={`${tag} — 博客`} description={`标签为“${tag}”的文章。`}>
+  <div class="page shell">
+    <header class="page-header">
+      <p class="eyebrow">博客标签</p>
+      <h1>{tag}</h1>
+      <p>该主题下共有 {posts.length} 篇文章。</p>
+    </header>
+    <PostList posts={posts} />
+    <p class="back-link"><a href={withBase('/blog/')}>← 返回全部文章</a></p>
+  </div>
+</BaseLayout>

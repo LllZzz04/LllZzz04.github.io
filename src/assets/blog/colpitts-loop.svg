@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">Colpitts 振荡器抽象环路图</title>
+  <desc id="desc">使用简洁框图表示有源级、谐振网络和电容反馈。</desc>
+  <rect width="1200" height="620" fill="#f2f1eb"/>
+  <g fill="none" stroke="#26323a" stroke-width="4">
+    <rect x="140" y="190" width="270" height="180" rx="4"/>
+    <rect x="780" y="190" width="270" height="180" rx="4"/>
+    <path d="M410 280H780"/>
+    <path d="M920 370v120H280V370"/>
+    <path d="M740 263l40 17-40 17"/>
+    <path d="M320 473l-40 17 40 17"/>
+  </g>
+  <g fill="#315f86">
+    <circle cx="595" cy="280" r="8"/>
+    <circle cx="600" cy="490" r="8"/>
+  </g>
+  <g fill="#26323a" font-family="Microsoft YaHei, PingFang SC, system-ui, sans-serif" text-anchor="middle">
+    <text x="275" y="270" font-size="30" font-weight="600">有源级</text>
+    <text x="275" y="312" font-size="22" fill="#697179">增益 · 反相 · 偏置</text>
+    <text x="915" y="270" font-size="30" font-weight="600">LC 网络</text>
+    <text x="915" y="312" font-size="22" fill="#697179">谐振 · 负载</text>
+    <text x="600" y="460" font-size="24" fill="#315f86">电容反馈</text>
+  </g>
+</svg>

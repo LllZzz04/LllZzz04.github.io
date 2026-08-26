@@ -1,0 +1,32 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { formatDate, withBase } from '../utils/site';
+import TagList from './TagList.astro';
+
+interface Props {
+  posts: CollectionEntry<'blog'>[];
+  compact?: boolean;
+}
+
+const { posts, compact = false } = Astro.props;
+---
+
+{posts.length > 0 ? (
+  <ol class:list={['post-list', { compact }]}>
+    {posts.map((post) => (
+      <li>
+        <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
+        <div class="post-summary">
+          <h2>
+            <a href={withBase(`/blog/${post.id}/`)}>{post.data.title}</a>
+            {post.data.draft && <span class="draft-badge">草稿</span>}
+          </h2>
+          {!compact && <p>{post.data.description}</p>}
+          {!compact && <TagList tags={post.data.tags} />}
+        </div>
+      </li>
+    ))}
+  </ol>
+) : (
+  <p class="empty-state">这里还没有文章。</p>
+)}

@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../utils/site';
+---
+
+<BaseLayout title="404 — 页面未找到" description="找不到你请求的页面。" noindex>
+  <div class="page shell not-found">
+    <p class="eyebrow">404</p>
+    <h1>页面未找到。</h1>
+    <p>这个页面可能已被移动，或者链接已经失效。</p>
+    <a class="text-link" href={withBase('/')}>返回首页 <span aria-hidden="true">→</span></a>
+  </div>
+</BaseLayout>

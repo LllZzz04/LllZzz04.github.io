@@ -1,0 +1,54 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import { estimateReadingMinutes, visiblePosts, withBase } from '../../utils/site';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+  previousPost?: CollectionEntry<'blog'>;
+  nextPost?: CollectionEntry<'blog'>;
+}
+
+export async function getStaticPaths() {
+  const posts = visiblePosts(await getCollection('blog'));
+  return posts.map((post, index) => ({
+    params: { slug: post.id },
+    props: {
+      post,
+      previousPost: posts[index + 1],
+      nextPost: posts[index - 1],
+    },
+  }));
+}
+
+const { post, previousPost, nextPost } = Astro.props;
+const { Content, headings } = await render(post);
+const readingMinutes = estimateReadingMinutes(post.body || '');
+---
+
+<ArticleLayout
+  title={post.data.title}
+  description={post.data.description}
+  date={post.data.date}
+  updated={post.data.updated}
+  tags={post.data.tags}
+  headings={headings}
+  readingMinutes={readingMinutes}
+>
+  <Content />
+
+  <nav class="article-pagination" aria-label="相邻文章" slot="after-article">
+    {previousPost ? (
+      <a href={withBase(`/blog/${previousPost.id}/`)}>
+        <span>上一篇</span>
+        <strong>{previousPost.data.title}</strong>
+      </a>
+    ) : <span class="empty-slot" aria-hidden="true"></span>}
+    {nextPost ? (
+      <a href={withBase(`/blog/${nextPost.id}/`)}>
+        <span>下一篇</span>
+        <strong>{nextPost.data.title}</strong>
+      </a>
+    ) : <span class="empty-slot" aria-hidden="true"></span>}
+  </nav>
+</ArticleLayout>

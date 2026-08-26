@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <rect width="1200" height="900" fill="#e9e8e2"/>
+  <ellipse cx="610" cy="705" rx="420" ry="66" fill="#c9c9c3"/>
+  <defs>
+    <radialGradient id="sphere" cx="34%" cy="28%" r="68%"><stop offset="0" stop-color="#f5f4ee"/><stop offset="1" stop-color="#626762"/></radialGradient>
+    <linearGradient id="cylinder" x1="0" x2="1"><stop stop-color="#525752"/><stop offset=".45" stop-color="#deded8"/><stop offset="1" stop-color="#777b77"/></linearGradient>
+  </defs>
+  <circle cx="315" cy="510" r="170" fill="url(#sphere)"/>
+  <path d="M520 340h250v330H520z" fill="#92958f"/>
+  <path d="M520 340l125-75 250 0-125 75z" fill="#d8d8d2"/>
+  <path d="M770 340l125-75v330l-125 75z" fill="#5c615d"/>
+  <path d="M925 350c0-45 70-82 155-82s155 37 155 82v290c0 46-70 82-155 82s-155-36-155-82z" fill="url(#cylinder)" transform="translate(-120)"/>
+  <ellipse cx="960" cy="350" rx="155" ry="82" fill="#d6d6d0"/>
+</svg>

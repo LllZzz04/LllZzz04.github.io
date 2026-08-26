@@ -1,0 +1,57 @@
+---
+import type { MarkdownHeading } from 'astro';
+import BaseLayout from './BaseLayout.astro';
+import TableOfContents from '../components/TableOfContents.astro';
+import TagList from '../components/TagList.astro';
+import { formatDate } from '../utils/site';
+
+interface Props {
+  title: string;
+  description: string;
+  date: Date;
+  updated?: Date;
+  tags: string[];
+  headings: MarkdownHeading[];
+  readingMinutes?: number;
+  kind?: 'blog' | 'project';
+}
+
+const {
+  title,
+  description,
+  date,
+  updated,
+  tags,
+  headings,
+  readingMinutes,
+  kind = 'blog',
+} = Astro.props;
+---
+
+<BaseLayout title={`${title} — ${kind === 'blog' ? '博客' : '项目'}`} description={description} type="article">
+  <div class="article-shell shell">
+    <article class="article">
+      <header class="article-header">
+        <p class="eyebrow">{kind === 'blog' ? '文章' : '项目'}</p>
+        <h1>{title}</h1>
+        <p class="article-deck">{description}</p>
+        <div class="article-meta">
+          <time datetime={date.toISOString()}>{formatDate(date)}</time>
+          {updated && <span>更新于 {formatDate(updated)}</span>}
+          {readingMinutes && <span>预计阅读 {readingMinutes} 分钟</span>}
+        </div>
+        <TagList tags={tags} linked={kind === 'blog'} />
+      </header>
+
+      <div class="prose">
+        <slot />
+      </div>
+
+      <slot name="after-article" />
+    </article>
+
+    <aside class="toc-column">
+      <TableOfContents headings={headings} />
+    </aside>
+  </div>
+</BaseLayout>

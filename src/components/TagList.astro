@@ -1,0 +1,22 @@
+---
+import { slugifyTag, withBase } from '../utils/site';
+
+interface Props {
+  tags: string[];
+  linked?: boolean;
+}
+
+const { tags, linked = true } = Astro.props;
+---
+
+<ul class="tag-list" aria-label="标签">
+  {tags.map((tag) => (
+    <li>
+      {linked ? (
+        <a href={withBase(`/blog/tags/${slugifyTag(tag)}/`)}>{tag}</a>
+      ) : (
+        <span>{tag}</span>
+      )}
+    </li>
+  ))}
+</ul>

@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../config';
+---
+
+<BaseLayout title={`关于 — ${SITE.name}`} description={`${SITE.name}的个人介绍、研究兴趣、当前学习方向与联系方式。`}>
+  <div class="page shell about-page">
+    <header class="page-header">
+      <p class="eyebrow">个人简介</p>
+      <h1>关于我</h1>
+      <p>{SITE.shortDescription}</p>
+    </header>
+
+    <div class="about-grid">
+      <section>
+        <h2>研究兴趣</h2>
+        <ul>
+          <li>RFIC</li>
+          <li>模拟集成电路</li>
+          <li>振荡器</li>
+          <li>毫米波集成电路</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>正在学习</h2>
+        <ul>
+          <li>射频电路设计</li>
+          <li>模拟集成电路设计</li>
+          <li>透视绘画</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>其他平台</h2>
+        <ul class="elsewhere-list">
+          <li><a href={SITE.github} target="_blank" rel="me noopener">GitHub</a></li>
+          <li><a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</BaseLayout>

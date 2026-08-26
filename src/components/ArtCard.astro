@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import { formatDate } from '../utils/site';
+import { withBase } from '../utils/site';
+
+interface Props {
+  artwork: CollectionEntry<'art'>;
+  eager?: boolean;
+}
+
+const { artwork, eager = false } = Astro.props;
+---
+
+<article class="art-card">
+  <a
+    class="art-image-link"
+    href={withBase(artwork.data.image.src)}
+    target="_blank"
+    rel="noopener"
+    aria-label={`查看${artwork.data.title}的大图`}
+  >
+    <Image
+      src={artwork.data.image}
+      alt={artwork.data.alt}
+      widths={[360, 720, 1080]}
+      sizes="(max-width: 640px) 100vw, (max-width: 960px) 50vw, 33vw"
+      loading={eager ? 'eager' : 'lazy'}
+      decoding="async"
+    />
+  </a>
+  <div class="art-caption">
+    <h2>{artwork.data.title}</h2>
+    <time datetime={artwork.data.date.toISOString()}>{formatDate(artwork.data.date, false)}</time>
+    <p>{artwork.data.description}</p>
+  </div>
+</article>

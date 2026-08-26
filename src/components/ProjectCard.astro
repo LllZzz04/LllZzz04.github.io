@@ -1,0 +1,21 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { formatDate, withBase } from '../utils/site';
+import TagList from './TagList.astro';
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+}
+
+const { project } = Astro.props;
+---
+
+<article class="project-card">
+  <div class="project-card-header">
+    <h2><a href={withBase(`/projects/${project.id}/`)}>{project.data.title}</a></h2>
+    <time datetime={project.data.date.toISOString()}>{formatDate(project.data.date, false)}</time>
+  </div>
+  <p>{project.data.description}</p>
+  <TagList tags={project.data.tags} linked={false} />
+  <a class="text-link" href={withBase(`/projects/${project.id}/`)}>查看详情 <span aria-hidden="true">→</span></a>
+</article>

@@ -1,0 +1,14 @@
+---
+import { SITE } from '../config';
+import { withBase } from '../utils/site';
+---
+
+<footer class="site-footer">
+  <div class="footer-inner shell">
+    <p>© {new Date().getFullYear()} {SITE.name}。为长期记录而建。</p>
+    <nav aria-label="页脚导航">
+      <a href={withBase('/rss.xml')}>RSS</a>
+      <a href={`mailto:${SITE.email}`}>邮件</a>
+    </nav>
+  </div>
+</footer>
