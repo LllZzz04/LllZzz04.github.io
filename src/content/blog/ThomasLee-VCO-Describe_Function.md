@@ -8,10 +8,6 @@ tags:
   - 集成电路
 draft: false
 ---
-# Thomas H. Lee-压控振荡器-Chapter1初识
-
-
-
 ## 写在前面
 
 ​	最近在读Thomas H. Lee的射频CMOS集成电路设计，由于本人的研究方向是VCO因此就从VCO开始读起了。由于个人资历尚浅可能会有不周全处，还望读者海涵，同时若有错误感谢指正。
