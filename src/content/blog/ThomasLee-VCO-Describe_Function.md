@@ -1,12 +1,12 @@
 ---
-title：Thomas H. Lee-压控振荡器-Chapter1初识
-description：必要的知识准备
-date：2026-8-27
-tags：
-    - 控制
-    - 数学
-    - 集成电路
-draft： false
+title: "Thomas H. Lee - 压控振荡器 - Chapter 1 初识"
+description: "必要的知识准备"
+date: 2026-08-27
+tags:
+  - 控制
+  - 数学
+  - 集成电路
+draft: false
 ---
 # Thomas H. Lee-压控振荡器-Chapter1初识
 
