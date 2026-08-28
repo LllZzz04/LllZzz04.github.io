@@ -629,6 +629,10 @@ video {
   font-size: 1.55rem;
 }
 
+.prose > h2:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
 .prose h3 {
   margin: 2em 0 0.7em;
   font-size: 1.25rem;

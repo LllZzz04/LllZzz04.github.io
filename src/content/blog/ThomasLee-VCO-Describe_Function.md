@@ -102,7 +102,7 @@ $$
 
 <img
   src="/image/blog/Thomas_Lee/Chapter1/large-signal-transconductor.png"
-  alt="Large-signal-transconductor"
+  alt="large-signal-transconductor"
   style="width: 70%;"
 />
 
