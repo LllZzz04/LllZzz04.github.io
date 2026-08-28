@@ -100,11 +100,19 @@ $$
 
 ​	因此作者直接求解了一下MOS的描述函数，或者说是所有双极型器件的描述函数：
 
-<img src="image\blog\Thomas_Lee\Chapter1\Large-signal transconductor.png" alt="Large-signal transconductor"  style="width: 70%;" />
+<img
+  src="/image/blog/Thomas_Lee/Chapter1/large-signal-transconductor.png"
+  alt="Large-signal-transconductor"
+  style="width: 70%;"
+/>
 
 ​	考虑如图的晶体管，C足够大保证高频S直接接地，作者先假想了大致的输出波形情况
 
-<img src="image\blog\Thomas_Lee\Chapter1\input-output.png" alt="input-output"  style="width: 67%;" />
+<img
+  src="/image/blog/Thomas_Lee/Chapter1/input-output.png"
+  alt="input-output"
+  style="width: 67%;"
+/>
 
 ​	这个iD简而言之是隔直大电容的放电速度追不上输入的变化导致的。
 
