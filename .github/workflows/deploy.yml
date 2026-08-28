@@ -14,10 +14,9 @@ concurrency:
   group: pages
   cancel-in-progress: false
 
-  # Repository variables override these automatic GitHub Pages defaults.
 env:
-  SITE_URL: ${{ vars.SITE_URL || format('https://{0}.github.io', github.repository_owner) }}
-  BASE_PATH: ${{ vars.BASE_PATH || format('/{0}', github.event.repository.name) }}
+  SITE_URL: https://LllZzz04.github.io
+  BASE_PATH: /
 
 jobs:
   build:
