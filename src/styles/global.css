@@ -595,14 +595,24 @@ video {
 }
 
 .prose {
-  font-size: 1.035rem;
-  line-height: 1.82;
+  font-size: 1.05rem;
+  line-height: 1.78;
+  letter-spacing: 0.01em;
+  line-break: strict;
+  text-autospace: normal;
   overflow-wrap: break-word;
+}
+
+.prose > p {
+  text-align: justify;
+  text-indent: 2em;
 }
 
 .prose > :first-child {
   margin-top: 0;
 }
+
+
 
 .prose p,
 .prose ul,
