@@ -17,7 +17,6 @@ export const SITE = {
 export const NAV_ITEMS = [
   { label: '首页', href: '/' },
   { label: '博客', href: '/blog/' },
-  { label: '项目', href: '/projects/' },
   { label: '绘画', href: '/art/' },
   { label: '关于', href: '/about/' },
 ] as const;

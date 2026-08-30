@@ -2,15 +2,11 @@
 import { getCollection } from 'astro:content';
 import ArtCard from '../components/ArtCard.astro';
 import PostList from '../components/PostList.astro';
-import ProjectCard from '../components/ProjectCard.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { SITE } from '../config';
 import { sortByDate, visiblePosts, withBase } from '../utils/site';
 
 const posts = visiblePosts(await getCollection('blog')).slice(0, 3);
-const projects = sortByDate(await getCollection('projects'))
-  .sort((a, b) => Number(b.data.featured) - Number(a.data.featured))
-  .slice(0, 2);
 const artworks = sortByDate(await getCollection('art')).slice(0, 3);
 ---
 
@@ -28,16 +24,6 @@ const artworks = sortByDate(await getCollection('art')).slice(0, 3);
         <a class="text-link" href={withBase('/blog/')}>查看全部文章 <span aria-hidden="true">→</span></a>
       </div>
       <PostList posts={posts} compact />
-    </section>
-
-    <section class="section" aria-labelledby="selected-projects">
-      <div class="section-heading">
-        <h2 id="selected-projects">精选项目</h2>
-        <a class="text-link" href={withBase('/projects/')}>查看全部项目 <span aria-hidden="true">→</span></a>
-      </div>
-      <div class="project-grid">
-        {projects.map((project) => <ProjectCard project={project} />)}
-      </div>
     </section>
 
     <section class="section" aria-labelledby="selected-art">
