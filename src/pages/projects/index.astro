@@ -16,7 +16,7 @@ const projects = sortByDate(await getCollection('projects'))
     <header class="page-header">
       <p class="eyebrow">工程实践</p>
       <h1>项目</h1>
-      <p>用于记录工程与科研项目的背景、设计过程、结果和复盘。示例内容刻意不包含虚构实验数据。</p>
+      <p>用于记录工程与科研项目的背景、设计过程、结果和复盘。</p>
     </header>
     <div class="project-grid project-grid-full">
       {projects.map((project) => <ProjectCard project={project} />)}

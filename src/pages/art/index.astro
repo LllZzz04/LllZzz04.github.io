@@ -7,12 +7,12 @@ import { sortByDate } from '../../utils/site';
 const artworks = sortByDate(await getCollection('art'));
 ---
 
-<BaseLayout title="绘画 — 绘画与透视练习" description="一个用于展示绘画和透视练习的简洁作品集。">
+<BaseLayout title="绘画 — 绘画与透视练习" description="有一些东西想表达给你。">
   <div class="page shell">
     <header class="page-header">
       <p class="eyebrow">绘画练习</p>
       <h1>绘画</h1>
-      <p>一个安静、简单的作品网格。点击图片可在新窗口查看大图；当前图片均为可替换的示例占位作品。</p>
+      <p>一个安静、简单的作品网格</p>
     </header>
     <div class="art-grid">
       {artworks.map((artwork, index) => <ArtCard artwork={artwork} eager={index < 2} />)}

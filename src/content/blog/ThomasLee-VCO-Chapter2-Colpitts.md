@@ -1,7 +1,7 @@
 ---
 title: "Thomas H. Lee - 压控振荡器 - Chapter 2 Colpitts振荡器"
 description: "第一个认识的振荡器"
-date: 2026-08-27
+date: 2026-08-30
 tags:
   - 控制
   - 物理
@@ -13,7 +13,7 @@ typora-root-url: E:/play_work/personal-site/public
 ## 什么是Colpitts
 
 
-​正如下图所示，Colpitts总而言之是一个依靠电容变压器实现的正反馈电路，电容一方面作为谐振腔的一部分，另一方面作为反馈回路引入正反馈，要知道振荡器的起振条件就是要满足巴克豪森判据：总相移为0且环路增益为1。因此环路至少要是正反馈。
+​ 正如下图所示，Colpitts总而言之是一个依靠电容变压器实现的正反馈电路，电容一方面作为谐振腔的一部分，另一方面作为反馈回路引入正反馈，要知道振荡器的起振条件就是要满足巴克豪森判据：总相移为0且环路增益为1。因此环路至少要是正反馈。
 
 <img
   src="/image/blog/Thomas_Lee/Chapter2/Colpitts.png"
