@@ -69,6 +69,7 @@ $$
 <div style="text-align: center;">
 在差分对两端接一个电压源，假设电压左端为正记为1，右端为负记为2
 </div>
+
 $$
 \begin{aligned}
 \\令左侧：&v_1=\frac{v_d}{2}
