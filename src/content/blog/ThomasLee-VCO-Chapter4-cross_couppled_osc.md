@@ -66,19 +66,41 @@ $$
 
 由于是差分电路，先做差模等效：
 
-<p style="text-align: center;">在差分对两端接一个电压源，假设左端为正并记为 1，右端为负并记为 2</p>
-
 $$
+\begin{gathered}
+\text{在差分对两端接一个电压源，假设左端为正并记为 1，右端为负并记为 2}
+\\[1em]
 \begin{aligned}
-\\令左侧：&v_1=\frac{v_d}{2}
-\\右侧：&v_2=\frac{-v_d}{2}
-\\故：&v_{g1} = v_2 = \frac{-v_d}{2}
-\\&v_{g2} = v_1 = \frac{v_d}{2}
-\\因此&i_{d1}=g_mv_{gs1}=g_m(v_{g1}-v_{s1})=\frac{-g_mv_d}{2}
-\\同理&i_{d2}=g_mv_{gs2}=g_m(v_{g2}-v_{s2})=\frac{g_mv_d}{2}
-\\则&Z_{out}=\frac{v_1-v_2}{i_t}=\frac{v_{d}}{i_{d1}}=-\frac{2}{g_m}
-\\半边等效的话就是&Z=-\frac{1}{g_m}
+\text{令左侧：}\quad
+&v_1=\frac{v_d}{2} \\
+
+\text{右侧：}\quad
+&v_2=-\frac{v_d}{2} \\
+
+\text{故：}\quad
+&v_{g1}=v_2=-\frac{v_d}{2} \\
+&v_{g2}=v_1=\frac{v_d}{2} \\
+
+\text{因此：}\quad
+&i_{d1}=g_m v_{gs1}
+=g_m(v_{g1}-v_{s1})
+=-\frac{g_m v_d}{2} \\
+
+\text{同理：}\quad
+&i_{d2}=g_m v_{gs2}
+=g_m(v_{g2}-v_{s2})
+=\frac{g_m v_d}{2} \\
+
+\text{则：}\quad
+&Z_{\mathrm{out}}
+=\frac{v_1-v_2}{i_t}
+=\frac{v_d}{i_{d1}}
+=-\frac{2}{g_m} \\
+
+\text{半边等效：}\quad
+&Z=-\frac{1}{g_m}
 \end{aligned}
+\end{gathered}
 $$
 
 非常漂亮的结论，只要改晶体管的跨导就可以调控负阻大小，极为方便，与此同时由于是差分电路，天生不包含偶次谐波，频谱的纯净度也很好，
