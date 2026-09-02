@@ -1,7 +1,7 @@
 ---
 title: "Thomas H. Lee - 压控振荡器 - Chapter 4 负阻谐振器"
 description: "很有用的振荡器理论'"
-date: 2026-08-31
+date: 2026-9-2
 tags:
   - 控制
   - 物理
