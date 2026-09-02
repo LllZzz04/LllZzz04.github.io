@@ -66,9 +66,7 @@ $$
 
 由于是差分电路，先做差模等效：
 
-<div style="text-align: center;">
-在差分对两端接一个电压源，假设电压左端为正记为1，右端为负记为2
-</div>
+<p style="text-align: center;">在差分对两端接一个电压源，假设左端为正并记为 1，右端为负并记为 2</p>
 
 $$
 \begin{aligned}
